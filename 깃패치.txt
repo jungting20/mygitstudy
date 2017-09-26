@@ -1,0 +1,14 @@
+fetch
+
+git 패치 origin develop 로 땡겨오면
+
+임시 로컬에 머지를 위한 임시 브랜치 origin/develop 로 땡겨옴
+
+이걸 내가 브랜치로 만들고싶다하면 git checkout -b 만들브랜치명 origin/develop 이렇게 해주면됨
+
+그럼 만들 브랜치명에 origin/develop 상태의 커밋이 저장 
+
+이걸 merge 브랜치명으로 머지해도 되고
+
+origin/develop로 직접 머지해도됨!!
+

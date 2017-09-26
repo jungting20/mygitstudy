@@ -1,0 +1,55 @@
+1.깃 상위스킬 정리
+
+
+git study!!!
+
+
+자자 정리를 하자면
+
+내 작업 브랜치 jungho
+여기서 내가 막 작업을 했어 ㅋㅋ 근데 소스가 망가져버림 이상하게 작업해서
+고친게 워낙 많아서 뭘 바꿔야할지 몰라 이럴때는 어떻게해야하냐
+git reflog 로 커밋들을 확인
+git reset --hard 커밋번호
+로가면 그냥 그때의 커밋으로 완전히 바뀌어버림 
+--hard 명령어는 그냥 내가 바꾼건 그냥 없애버림
+
+만약 이소스는 혹시모르니 내가 유지는 하고싶다 그러면
+git stash나 git commit 해서 그 커밋을 새로만든다음 
+git reflog를 활용해서 커밋번호를 확인하자
+reset으로 바로직전 커밋까지 돌아가면됨 ㅋ 
+그러고 다시 가고싶으면 다시 reset으로 저리 가면되고 ㅋ 
+
+reset는 결론적으로 커밋돌리기 merge돌리기(ORIG_HEAD) 등 돌릴때 사용많이함
+뭐 사실 checkout를 사용해도됨 그런데 브랜치가 많아지는게 귀찮고 그러면 그냥 reset 쓰자
+
+git reset --hard 커밋번호: 내가 바꾼 모든소스는 날아감 그러니 지금 현재상태를 커밋후에 돌아가는걸 추천
+git reset --hard HEAD~1 : 이건 바로 직전 커밋으로 돌아감 그냥 직전 커밋 그 상태 그니까 내가 바꾼 소스 조차 없어지는거지
+git reset HEAD~1 : 이건 그냥 단순히 커밋을 취소하기 용으로 사용하면된다 왜냐하면 내가바꾼 소스는 유지하면서 커밋만 옮기는 거니까 다시 add . 하고 커밋 메세지 적고 하면된다.
+
+git reset ORIG_HEAD : 이건 머지를 취소할때사용하면됨 왜냐하면 머지를 하게되면 그 전 커밋 상태가 ORIG_HEAD 라는 HEAD에 저장이 됨
+저기로 다시 옮기는 거지
+
+git checkout -b 만들브랜치명 커밋번호: 이건 새롭게 브랜치를 만들면서 커밋번호가 적힌 커밋을 적용시킨다 이거임(git reset --hard 커밋번호) 이거랑 결과는 같은데 브랜치를 만들면서 이동하는게 더안전하지 사실
+
+git merge --abort : 그냥 그 충돌상태의 브랜치를 다시 돌리는데 사용
+
+git feach origin develop : develop의 소스를 가져옴 이상태에서 merge를 하게되면 머지함
+그럼 여기서 의문 merge는 어떤 브랜치랑하는데?
+git merge origin/develop 이거랑 함 
+git pull origin develop = git feach origin develop 하고 git merge origin/develop
+
+충돌시:일단 소스는 가지고온다 말그대로 소스 두개를 합쳐버림 그러니 둘다 남아있음
+그래서 내가 적절히 수정한다음 commit를 하게 되면 결국 merge를 하게된 효과가 되는거지
+
+
+
+git reflog: 커밋번호를 깔끔하게 볼 수있음 git log -p 보다 보기가 편함
+
+
+
+git pull origin branchname --allow-unrelated-histories 히스토리 어쩌고 에러
+
+
+
+
