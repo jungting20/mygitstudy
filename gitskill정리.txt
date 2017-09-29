@@ -1,4 +1,4 @@
-1.깃 상위스킬 정리
+1.깃 스킬 정리
 
 
 git study!!!
@@ -36,7 +36,8 @@ git merge --abort : 그냥 그 충돌상태의 브랜치를 다시 돌리는데 사용
 
 git feach origin develop : develop의 소스를 가져옴 이상태에서 merge를 하게되면 머지함
 그럼 여기서 의문 merge는 어떤 브랜치랑하는데?
-git merge origin/develop 이거랑 함 
+git merge origin/develop 이거랑 함 이건 임시브랜치고 옮길수는 없어 저 브랜치로 가고싶으면 새로만들면서 가야함 
+git checkout -b newbranch origin/develop 이런식으로 ㅋ 
 git pull origin develop = git feach origin develop 하고 git merge origin/develop
 
 충돌시:일단 소스는 가지고온다 말그대로 소스 두개를 합쳐버림 그러니 둘다 남아있음
