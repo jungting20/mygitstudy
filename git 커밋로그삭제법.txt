@@ -22,4 +22,6 @@ pick asd
 
 그러고나서 git commit --amend로 커밋메세지 바꿔주면 끝!
 
+reflog는 모든 작업이 다나오는거고 log는 커밋정보만 나오는거같다
+
 드디어 찾았네 ㅋㅋ 
