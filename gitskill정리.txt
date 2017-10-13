@@ -58,3 +58,5 @@ git pull origin branchname --allow-unrelated-histories 히스토리 어쩌고 에러
 
 
 
+
+
